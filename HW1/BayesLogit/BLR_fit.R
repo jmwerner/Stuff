@@ -4,14 +4,13 @@
 # Due date: October 28, 2013       #
 ####################################
 
-#Packages needed
-library(MASS)
-
-##Get command line argument
-
+#Get command line arguments
 args <- commandArgs(TRUE)
 cat(paste("Command Line Arguments:", args, "\n"))
 
+
+#Packages needed
+library(MASS)
 
 ###
 sim_start <- 1000   #starting number for jobs
@@ -20,7 +19,7 @@ length.datasets <- 200
 
 if(length(args)==0){
 	sinkit <- FALSE
-	jobid <- jobid + 1
+	jobid <- sim_start + 1
 	set.seed(1330931)
 }else{
 	# Sink output to file?
