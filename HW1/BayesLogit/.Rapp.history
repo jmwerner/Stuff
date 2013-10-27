@@ -1,2 +1,13 @@
 ?write.csv
 (560-327)/27.5
+?write.csv
+getwd()
+a = cbind(1:4,1:4)
+a
+write.csv(a)
+write.csv(a, header = FALSE)
+write.csv(a, "test.csv", header = FALSE)
+list.files9)
+list.files())
+list.files()
+getwd()

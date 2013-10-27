@@ -186,7 +186,7 @@ betas = bayes.logreg(data$n, data$y, cbind(data$X1, data$X2), starting_b0, solve
 #Creation of .csv output file of quantiles for returned beta vector
 probs = (1:99)/100
 percentile_table = cbind(quantile(betas[,1], probs), quantile(betas[,2], probs))
-write.csv(percentile_table,paste0(output_path,"Bayes_Logit_Percentiles_",jobid,".csv"), row.names = FALSE, col.names = FALSE)
+write.table(percentile_table,file=paste0(output_path,"Bayes_Logit_Percentiles_",jobid,".csv"), row.names = FALSE, col.names = FALSE, sep = ",")
 	
 
 q("no")
