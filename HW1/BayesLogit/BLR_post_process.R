@@ -38,7 +38,7 @@ for (iter in 1:(num_sims_completed))
 {
   num_so_far <- num_so_far+1
   sim_num <- sim_start + iter
-  outfile_res <- paste0(resdir,"blr_res_",sim_num,".csv")
+  outfile_res <- paste0(resdir,"Bayes_Logit_Percentiles_",sim_num,".csv")
   outfile_par <- paste0(pardir,"blr_pars_",sim_num,".csv")
   qs <- try(read.csv(outfile_res,header=FALSE),silent=TRUE)
   ps <- try(read.csv(outfile_par,header=TRUE),silent=TRUE)
