@@ -29,7 +29,7 @@
 module load R/3.0.0
 
 # Name of the job - You'll probably want to customize this.
-#SBATCH --job-name=blr_fit_data
+#SBATCH --job-name=BLR_fit
 # Specify range of jobs to run - passed into R as 'args'
 #SARRAY --range=1-200
 
