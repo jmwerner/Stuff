@@ -90,7 +90,7 @@ output_path = "/home/jwerner/Stuff/HW1/BayesLogit/results/"
 		#proposal density of a normal variable centered at mu
 		Beta_1 = mvrnorm(1,Beta_0, v*diag(length(Beta_0)))
 		
-		alpha = min(1,pi_fun(Beta_1, y, X, m, beta.0, Sigma.0.inv) -
+		alpha = min(0,pi_fun(Beta_1, y, X, m, beta.0, Sigma.0.inv) -
 					pi_fun(Beta_0, y, X, m, beta.0, Sigma.0.inv))
 				
 		if(alpha >= log(runif(1))){
@@ -119,14 +119,14 @@ output_path = "/home/jwerner/Stuff/HW1/BayesLogit/results/"
 		}
 	}#burnin loop
 	
-	if(verbose){
-		pdf(paste0("burnin_diagnostics_",jobid,".pdf"))
-		par(mfrow = c(2,2))
-		plot(beta_vector_burnin[,1], beta_vector_burnin[,2], type = "l")
-		plot(beta_vector_burnin[,1], type = "l")
-		plot(beta_vector_burnin[,2], type = "l")
-		hist(as.numeric(acceptance_vector_burnin))
-	}
+	#if(verbose){
+	#	pdf(paste0("burnin_diagnostics_",jobid,".pdf"))
+	#	par(mfrow = c(2,2))
+	#	plot(beta_vector_burnin[,1], beta_vector_burnin[,2], type = "l")
+	#	plot(beta_vector_burnin[,1], type = "l")
+	#	plot(beta_vector_burnin[,2], type = "l")
+	#	hist(as.numeric(acceptance_vector_burnin))
+	#}
 	
 	#Post burn-in Period
 	if(verbose){cat("\nBurn in period complete. \n \n")}
@@ -139,7 +139,7 @@ output_path = "/home/jwerner/Stuff/HW1/BayesLogit/results/"
 			"percent complete and has been running for", round(as.numeric(Sys.time()-begin_time),2),"seconds\n"))}
 		Beta_1 = mvrnorm(1,Beta_0, v*diag(length(Beta_0)))
 		
-		alpha = min(1,pi_fun(Beta_1, y, X, m, beta.0, Sigma.0.inv) -
+		alpha = min(0,pi_fun(Beta_1, y, X, m, beta.0, Sigma.0.inv) -
 					pi_fun(Beta_0, y, X, m, beta.0, Sigma.0.inv))
 				
 		if(alpha >= log(runif(1))){
@@ -152,14 +152,14 @@ output_path = "/home/jwerner/Stuff/HW1/BayesLogit/results/"
 		beta_vector = rbind(beta_vector, Beta_0)					
 	}
 	
-	if(verbose){
-		pdf(paste0("diagnostics_",jobid,".pdf"))
-		par(mfrow = c(2,2))
-		plot(beta_vector[,1], beta_vector[,2], type = "l")
-		plot(beta_vector[,1], type = "l")
-		plot(beta_vector[,2], type = "l")
-		hist(as.numeric(acceptance_vector))
-	}
+	#if(verbose){
+	#	pdf(paste0("diagnostics_",jobid,".pdf"))
+	#	par(mfrow = c(2,2))
+	#	plot(beta_vector[,1], beta_vector[,2], type = "l")
+	#	plot(beta_vector[,1], type = "l")
+	#	plot(beta_vector[,2], type = "l")
+	#	hist(as.numeric(acceptance_vector))
+	#}
 	
 	end_time = Sys.time()
 	
