@@ -180,13 +180,13 @@ starting_b0 = mvrnorm(1,Mu,starting_sigma)
 
 
 #niter, print.every, and retune defaults are acceptable and will not be changed here
-betas = bayes.logreg(data$n, data$y, cbind(data$X1, data$X2), starting_b0, solve(starting_sigma),burnin=2000, verbose = TRUE)
+betas = bayes.logreg(data$n, data$y, cbind(data$X1, data$X2), starting_b0, solve(starting_sigma),burnin=2000, verbose = FALSE)
 
 
 #Creation of .csv output file of quantiles for returned beta vector
 probs = (1:99)/100
 percentile_table = cbind(quantile(betas[,1], probs), quantile(betas[,2], probs))
-write.csv(percentile_table,paste0(output_path,"Bayes_Logit_Percentiles_",jobid,".csv"))
+write.csv(percentile_table,paste0(output_path,"Bayes_Logit_Percentiles_",jobid,".csv"), row.names = FALSE, col.names = FALSE)
 	
 
 q("no")
