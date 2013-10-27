@@ -1,4 +1,4 @@
-
+setwd("~/Stuff/HW1/BayesLogit/results")
 
 files = list.files()
 
