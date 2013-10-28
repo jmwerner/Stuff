@@ -4,6 +4,10 @@
 # Due date: October 28, 2013       #
 ####################################
 
+#This script was written to run as an array job on Gauss. All diagnostic tools
+# were commented out, but left in to show some of my thought process throughout 
+# development 
+
 #Get command line arguments
 args <- commandArgs(TRUE)
 cat(paste("Command Line Arguments:", args, "\n"))
@@ -54,7 +58,7 @@ output_path = "/home/jwerner/Stuff/HW1/BayesLogit/results/"
 # mu is vector of mu values
 # sigma.inv is input inverse covariance matrix
 "pi_fun" <- function(beta, y, X, m, mu, sigma.inv){
-	return(-.5*t(beta - mu) %*% sigma.inv %*% (beta-mu) + 
+	return(t(beta - mu) %*% sigma.inv %*% (beta-mu) + 
 		t(y) %*% (X %*% beta) - t(m) %*% log(1 + exp(X %*% beta)))
 }#pi_fun
 ##############################################################
@@ -82,7 +86,6 @@ output_path = "/home/jwerner/Stuff/HW1/BayesLogit/results/"
 	v = .1
 	
 	acceptance_vector_burnin = c()
-	mu_vector_burnin = c()
 	beta_vector_burnin = c()
 	
 	#Burn-in Period
@@ -126,6 +129,7 @@ output_path = "/home/jwerner/Stuff/HW1/BayesLogit/results/"
 	#	plot(beta_vector_burnin[,1], type = "l")
 	#	plot(beta_vector_burnin[,2], type = "l")
 	#	hist(as.numeric(acceptance_vector_burnin))
+	#	dev.off()
 	#}
 	
 	#Post burn-in Period
@@ -159,6 +163,7 @@ output_path = "/home/jwerner/Stuff/HW1/BayesLogit/results/"
 	#	plot(beta_vector[,1], type = "l")
 	#	plot(beta_vector[,2], type = "l")
 	#	hist(as.numeric(acceptance_vector))
+	#	dev.off()
 	#}
 	
 	end_time = Sys.time()
