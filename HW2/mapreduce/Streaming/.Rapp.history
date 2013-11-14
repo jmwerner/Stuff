@@ -1,0 +1,431 @@
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)
+head(res)
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+png("hist2d.png",width=px,height=px)#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}
+dev.off()
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}
+getwd()
+head(res)
+sum(res$V5)
+dim(res)
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/testout.txt",sep=",",header=F)#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}
+dim(res)
+plot(res[,1],res[,3])
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+head(res)
+dim(res)
+plot(res[,1],res[,3])
+a = lm(c(1,2,3,4) ~ c(2,6,4,3))
+a
+a$coeff
+a$coeff * 2
+Make 2D Histogram:#
+#
+#res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+Make 2D Histogram:#
+#
+#res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/test_reducer.txt",sep=",",header=F)
+head(res)
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+sum(res$V5)
+Make 2D Histogram:#
+#
+#res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/test_reducer.txt",sep=",",header=F)#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+Make 2D Histogram:#
+#
+#res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/test_reducer.txt",sep=",",header=F)#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/test_reducer.txt",sep=",",header=F)
+dim(res)
+res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/test_reducer.txt",sep=",",header=F)#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)
+dim(res)
+res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+sum(res$V5)
+head(res)
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)
+head(res)
+res$V1 = round(as.numeric(gsub("(","",res$V1)),1)
+class(res$V1)
+res$V1 = round(as.numeric(gsub("(","",as.character(res$V1))),1)
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)
+class(res)
+gsub("(","",as.character(res$V1))
+gsub("(", "", "hello(")
+gsub("a", "", "hello thereast")
+gsub("\\(", "", "hello(")
+res$V1 = round(as.numeric(gsub("\\(","",as.character(res$V1))),1)
+head(res)
+res$V3 = round(as.numeric(gsub("\\)","",as.character(res$V3))),1)
+head(res)
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+head(res)#
+#
+res$V1 = round(as.numeric(gsub("\\(","",as.character(res$V1))),1)#
+res$V3 = round(as.numeric(gsub("\\)","",as.character(res$V4))),1)
+head(res)
+res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+head(res)#
+#
+res$V1 = round(as.numeric(gsub("\\(","",as.character(res$V1))),1)#
+res$V4 = round(as.numeric(gsub("\\)","",as.character(res$V4))),1)
+head(res)
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+#
+res$V1 = as.numeric(gsub("\\(","",as.character(res$V1)))#
+res$V4 = as.numeric(gsub("\\)","",as.character(res$V4)))#
+#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+#
+res$V1 = round(as.numeric(gsub("\\(","",as.character(res$V1))),2)#
+res$V4 = round(as.numeric(gsub("\\)","",as.character(res$V4))),2)#
+#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()

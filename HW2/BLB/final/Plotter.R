@@ -1,0 +1,10 @@
+setwd("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/BLB/final")
+
+data = read.table("blb_lin_reg_data_s5_r50_SE.txt", header = TRUE)
+attach(data)
+pdf("SE_plot.pdf")
+plot(x, ylab = "Standard Error Values", col = "#106BFFBB", pch = 16)
+abline(h = mean(x), col = "RED", lwd = 2)
+legend("topleft", c("Mean"), lty = c(1), lwd = c(2),col = "RED")
+dev.off()
+detach(data)
