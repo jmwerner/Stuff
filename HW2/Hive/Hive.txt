@@ -1,0 +1,28 @@
+#First setup folders to help with Hive tables in bash (because the
+internet told me to)
+hadoop fs -mkdir /tmp
+hadoop fs -mkdir /user/hive/warehouse
+hadoop fs -chmod g+w /tmp
+hadoop fs -chmod g+w /user/hive/warehouse 
+
+#Load groups.txt from the 250 course bucket
+
+hadoop fs -mkdir input
+hadoop distcp s3://sta250bucket/groups.txt input
+
+#Selected commands that I used within hive
+
+CREATE TABLE bigtable (group INT,value DOUBLE) ROW FORMAT 
+DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE;
+
+SHOW TABLES;	
+
+DESCRIBE bigtable;
+	
+LOAD DATA INPATH '/user/hadoop/input/groups.txt' OVERWRITE INTO TABLE bigtable;
+
+INSERT OVERWRITE DIRECTORY '/user/hadoop/output/finalsummary/' 
+SELECT group, avg(value), variance(value) FROM bigtable GROUP BY group;
+
+#Transfer data from hadoop system to AWS linux machine, scp
+# back to local and dance like no one is watching.

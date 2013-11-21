@@ -1,0 +1,86 @@
+a = lm(c(1,2),c(1,2),weights = c(2,0))
+a = lm(c(1,2),c(1,2),weights = c(2,1))
+a = lm(c(1,2)~c(1,2),weights = c(2,1))
+y = c(3,6,4)
+x = c(1,2,3)
+a = lm(y~x)
+a
+a = lm(y~x, weights = c(0,0,3))
+a
+rm(list = ls())
+data = read.table("blb_lin_reg_data_s5_r50_SE.txt")
+setwd("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/BLB/final")#
+#
+data = read.table("blb_lin_reg_data_s5_r50_SE.txt")
+plot(data)
+head(data)
+data = read.table("blb_lin_reg_data_s5_r50_SE.txt", header = TRUE)
+head(data)
+plot(data$x)
+plot(x)
+attach(data)
+plot(x)
+abline(mean(x),0, lty = 2, col = "GREY")
+abline(mean(x),0, lwd = 2, col = "RED")
+abline(h = mean(x), lwd = 2, col = "RED")
+plot(x)
+abline(h = mean(x), lwd = 2, col = "RED")
+plot(x, ylab = "Standard Error Values")#
+abline(h = mean(x), lwd = 2, col = "RED")
+plot(x, ylab = "Standard Error Values", pch = "x")
+plot(x, ylab = "Standard Error Values", pch = "2")
+plot(x, ylab = "Standard Error Values", pch = 2)
+plot(x, ylab = "Standard Error Values", pch = 3)
+plot(x, ylab = "Standard Error Values", pch = 4)
+plot(x, ylab = "Standard Error Values", pch = 5)
+plot(x, ylab = "Standard Error Values", pch = 6)
+plot(x, ylab = "Standard Error Values", pch = 7)
+plot(x, ylab = "Standard Error Values", pch = 8)
+plot(x, ylab = "Standard Error Values", pch = 9)
+plot(x, ylab = "Standard Error Values", pch = 10)
+plot(x, ylab = "Standard Error Values", pch = 11)
+plot(x, ylab = "Standard Error Values", pch = 12)
+plot(x, ylab = "Standard Error Values", pch = 13)
+plot(x, ylab = "Standard Error Values", pch = 14)
+plot(x, ylab = "Standard Error Values", pch = 15)
+plot(x, ylab = "Standard Error Values", pch = 16)
+plot(x, ylab = "Standard Error Values", pch = 16, col = "blue")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#0001FF1F")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#0001FF5F")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#0001FF9F")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#0001FFBF")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#0011FFBF")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#0051FFBF")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#0031FFBF")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#0631FFBF")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#AA31FFBF")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#3A31FFBF")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#2A21FFBF")
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#2A21FFCF")
+abline(h = mean(x), lwd = 2, col = "RED")
+pdf("SE_plot.pdf")#
+plot(x, ylab = "Standard Error Values", pch = 16, col = "#2A21FFCF")#
+abline(h = mean(x), lwd = 2, col = "RED")#
+dev.off()
+detach(data)
+setwd("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/BLB/final")#
+#
+data = read.table("blb_lin_reg_data_s5_r50_SE.txt", header = TRUE)#
+attach(data)
+plot(x, ylab = "Standard Error Values", col = "#10ABFF60")
+plot(x, ylab = "Standard Error Values", col = "#10ABFF60", pch = 16)
+plot(x, ylab = "Standard Error Values", col = "#10ABFF90", pch = 16)
+plot(x, ylab = "Standard Error Values", col = "#10ABFFBB", pch = 16)
+plot(x, ylab = "Standard Error Values", col = "#106BFFBB", pch = 16)
+abline(h = mean(x), col = "RED")
+legend("topleft", c("Mean"), lty = c(1), col = "RED")
+setwd("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/BLB/final")#
+#
+data = read.table("blb_lin_reg_data_s5_r50_SE.txt", header = TRUE)#
+attach(data)#
+pdf("SE_plot.pdf")#
+plot(x, ylab = "Standard Error Values", col = "#106BFFBB", pch = 16)#
+abline(h = mean(x), col = "RED", lwd = 2)#
+legend("topleft", c("Mean"), lty = c(1), lwd = c(2),col = "RED")#
+dev.off()#
+detach(data)

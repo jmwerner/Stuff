@@ -1,0 +1,1085 @@
+length(stringer)
+close(stream)
+stream = file(infile, open = "r")
+nextline = readLines(stream,1)
+nextline
+split_string = strsplit(nextline, " ")#
+			zeros = 2#
+			stringer = " "#
+			while(length(split_string[[1]])>12){#
+				stringer = paste0(stringer," ")#
+				nextline = gsub(stringer, " ", nextline)#
+				split_string = strsplit(nextline, " ")#
+				zeros = zeros + 1#
+			}
+gsub(stringer, " ", nextline)
+stringer
+nextline
+nchar(stringer)
+length(split_string[[1]])
+split_string
+split_string = strsplit(nextline, " ")#
+			stringer = " "#
+			while(length(split_string[[1]])>12){#
+				stringer = paste0(stringer," ")#
+				nextline = gsub(stringer, " ", nextline)#
+				split_string = strsplit(nextline, " ")#
+			}
+split_string
+close(stream)
+stream = file(infile, open = "r")
+nextline = readLines(stream,1)
+nextline
+split_string = strsplit(nextline, " ")
+split_string
+which(split_string[[1]] == "")
+split_string[[1]][-which(split_string[[1]] == "")]
+split_string[[1]] = split_string[[1]][-which(split_string[[1]] == "")]
+close(stream)
+stream = file(infile, open = "r")#
+#
+eof = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if((substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			split_string[[1]] = split_string[[1]][-which(split_string[[1]] == "")]#
+			if(length(split_string[[1]])!=12){#
+				cat("ERROR in parsing function\n")#
+			}#
+#
+			row = mapply(FUN = function(x, logical){#
+				out = NA#
+				if(logical){#
+					out = as.numeric(x)#
+				}else{#
+					out = x#
+				}#
+			}, x=obs, logical = c(rep(1,3),0,rep(1,8)))#
+			data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if((substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			split_string[[1]] = split_string[[1]][-which(split_string[[1]] == "")]#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if((substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			split_string[[1]] = split_string[[1]][-which(split_string[[1]] == "")]#
+			#only write to data frame if interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6]== "001")){#
+				print(length(split_string[[1]]))#
+			}#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+nextline
+length(nextline)
+nextline
+length("")
+split_string
+close(stream)
+open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if((substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			split_string[[1]] = split_string[[1]][-which(split_string[[1]] == "")]#
+			#only write to data frame if interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				print(length(split_string[[1]]))#
+			}#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+stream = file(infile, open = "r")
+nextline = readLines(stream,1)
+nextline
+length(nextline)
+length(char(0))
+(substr(nextline,1,2)
+)
+!(substr(nextline,1,2) == "##")
+close(stream)
+open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			split_string[[1]] = split_string[[1]][-which(split_string[[1]] == "")]#
+			#only write to data frame if interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				print(length(split_string[[1]]))#
+			}#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+nextline
+split_string
+split_string = strsplit(nextline, " ")
+split_string
+which(split_string[[1]] == "")
+split_string[[1]] = split_string[[1]][-which(split_string[[1]] == "")]
+split_string
+split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(inds){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}
+inds
+length(inds)
+split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}
+split_string
+(split_string[[1]][4] == "position2d")
+(split_string[[1]][6] == "001")
+close(stream)
+open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			#only write to data frame if interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				print(length(split_string[[1]]))#
+			}#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+split_string
+length(split_string[[1]])
+close(stream)
+open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			if(OPEN){#
+				print(length(split_string[[1]]))#
+				OPEN = 0#
+			}#
+			#looking for interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				OPEN = 1#
+			}#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+OPEN = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			if(OPEN){#
+				print(length(split_string[[1]]))#
+				OPEN = 0#
+			}#
+			#looking for interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				OPEN = 1#
+			}#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+stream = file(infile, open = "r")#
+#
+eof = 0#
+OPEN = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			if(OPEN){#
+				cat(length(split_string[[1]]))#
+				cat( " ")#
+				OPEN = 0#
+			}#
+			#looking for interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				OPEN = 1#
+			}#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+split_string
+split_string[[1]][c(4,6)]
+close(stream)
+stream = file(infile, open = "r")#
+#
+eof = 0#
+OPEN = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			if(OPEN){#
+				#cat(length(split_string[[1]]))#
+				#cat( " ")#
+				OPEN = 0#
+			}#
+			#looking for interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				OPEN = 1#
+			}#
+#
+			print(c(split_string[[1]][c(4,6)])#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+infile = logfiles[1]#
+#
+#open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+OPEN = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			if(OPEN){#
+				#cat(length(split_string[[1]]))#
+				#cat( " ")#
+				OPEN = 0#
+			}#
+			#looking for interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				OPEN = 1#
+			}#
+#
+			print(c(split_string[[1]][c(4,6)]))#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+split_string
+unlist(split_sprint)
+unlist(split_string)
+a = unlist(split_string)
+dim(a)
+length(a)
+class(a)
+split_string
+nextline
+close(stream)
+stream = file(infile, open = "r")
+eof = 0
+OPEN = 0
+nextline = readLines(stream,1)
+nextline
+length(nextline)
+!(substr(nextline,1,2) == "##")
+split_string = strsplit(nextline, " ")
+split_string
+inds = which(split_string[[1]] == "")
+inds
+if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}
+split_string
+close(stream)
+open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+OPEN = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(nextline,1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			if(OPEN){#
+				if(length(split_string[[1]]) == 735){#
+					#Then laser line follows position 2d - otherwise it doesn't #
+					# and shouldn't be added to the data frame#
+					data = rbind(data)#
+				}#
+				#cat( " ")#
+				OPEN = 0#
+			}#
+			#looking for interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				x_location = split_string[[1]][8]#
+				y_location = split_string[[1]][9]#
+				OPEN = 1#
+			}#
+#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+string_split
+split_string
+split_string = strsplit(nextline, " ")
+split_string
+nextline
+close(stream)
+stream = file(infile, open = "r")
+eof = 0#
+OPEN = 0#
+data = c()
+nextline = readLines(stream,1)
+nextline
+nextline = readLines(stream,1)
+nextline
+gsub(" ", "", "a b  c")
+split_string
+split_string = strsplit(nextline, " ")
+split_string
+inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}
+split_string
+nextline = readLines(stream,1)
+nextline
+nextline = readLines(stream,1)#
+	print(nextline)
+length(nextline)
+!(substr(gsub(" ", "",nextline),1,2) == "##")
+split_string = strsplit(nextline, " ")
+split_string
+inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}
+split_string
+head(split_string)
+head(split_string[[1]])
+nextline
+nextline = readLines(stream,1)
+nextline
+nextline = readLines(stream,1)
+nextline
+close(stream)
+stream = file(infile, open = "r")#
+#
+eof = 0#
+OPEN = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(gsub(" ", "",nextline),1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			if(OPEN){#
+				if(length(split_string[[1]]) == 735){#
+					#Then laser line follows position 2d - otherwise it doesn't #
+					# and shouldn't be added to the data frame#
+					data = rbind(c(x_location, y_location))#
+				}#
+				OPEN = 0#
+			}#
+			#looking for interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				x_location = split_string[[1]][8]#
+				y_location = split_string[[1]][9]#
+				OPEN = 1#
+			}#
+#
+			#data = rbind(data, row)#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+data
+stream = file(infile, open = "r")#
+#
+eof = 0#
+OPEN = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(gsub(" ", "",nextline),1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			if(OPEN){#
+				if(length(split_string[[1]]) == 735){#
+					#Then laser line follows position 2d - otherwise it doesn't #
+					# and shouldn't be added to the data frame#
+					data = rbind(data,c(x_location, y_location))#
+				}#
+				OPEN = 0#
+			}#
+			#looking for interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				x_location = split_string[[1]][8]#
+				y_location = split_string[[1]][9]#
+				OPEN = 1#
+			}#
+#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+data
+a
+a = as.numeric(data)
+head(a)
+a = cbind(as.numeric(data[,1]), as.numeric(data[,2]))
+head(a)
+plot(a)
+plot(a, type = "l")
+split_string
+class(split_string)
+infile = logfiles[1]#
+#
+#open file stream as read only#
+stream = file(infile, open = "r")#
+#
+eof = 0#
+OPEN = 0#
+data = c()#
+while(!eof){#
+	nextline = readLines(stream,1)#
+	if(length(nextline)){#
+		#Parsing only proceeds if line is not a comment#
+		if(!(substr(gsub(" ", "",nextline),1,2) == "##")){#
+			split_string = strsplit(nextline, " ")#
+			inds = which(split_string[[1]] == "")#
+			if(length(inds)){#
+				split_string[[1]] = split_string[[1]][-inds]#
+			}#
+			if(OPEN){#
+				len = length(split_string[[1]])#
+				if(len == 735){#
+					#Then laser line follows position 2d - otherwise it doesn't #
+					# and shouldn't be added to the data frame#
+					data = rbind(data,c(x_location, y_location, #
+						unlist(split_string)[14:len]))#
+				}#
+				OPEN = 0#
+			}#
+			#looking for interface = 0 and type = position2d#
+			if((split_string[[1]][4] == "position2d") & (split_string[[1]][6] == "001")){#
+				x_location = split_string[[1]][8]#
+				y_location = split_string[[1]][9]#
+				OPEN = 1#
+			}#
+#
+		}#
+	}else{#
+		eof = 1#
+	}#
+}#
+#
+close(stream)
+18000*24
+.05 - .55*.2
+sqrt(.95-.55^2)
+sqrt(.2 - .2^2)
+-.06/.805/.4
+prob_fun <- function(n){#
+	x = exp(-n*(n-1)/(2*365))#
+	return(1 - x)#
+}#
+N = 39#
+#
+if(N<40){#
+	vect = 1:60#
+}else{#
+	vect = 1:(N+20)#
+}#
+#
+plot(vect, prob_fun(vect), main = "Birthday Probabilities", xlab = "Number of People", ylab = "Probability of a pair")#
+abline(v = N, col = "RED", lty = 2)#
+abline(prob_fun(N), 0, col = "RED", lty = 2)#
+text(N, prob_fun(N-3), paste("N=", N, "P(N)=", round(prob_fun(N), 3)), pos = 4, offset = 0.2)
+N = 60#
+#
+if(N<40){#
+	vect = 1:60#
+}else{#
+	vect = 1:(N+20)#
+}#
+#
+plot(vect, prob_fun(vect), main = "Birthday Probabilities", xlab = "Number of People", ylab = "Probability of a pair")#
+abline(v = N, col = "RED", lty = 2)#
+abline(prob_fun(N), 0, col = "RED", lty = 2)#
+text(N, prob_fun(N-3), paste("N=", N, "P(N)=", round(prob_fun(N), 3)), pos = 4, offset = 0.2)
+choose(10,2)
+sample_x1 = function(v){#
+	returner = NA#
+	a = runif(1,0,1)#
+	if(a < .5){#
+		returner = c(0,0)#
+	}#
+	if(a >= .5 & a < .65){#
+		returner = c(0,1)#
+	}#
+	if(a >= .65 & a < .75){#
+		returner = c(1,0)#
+	}#
+	if(a >= .75 & a < .8){#
+		returner = c(1,1)#
+	}#
+	if(a >= .8){#
+		returner = c(2,0)#
+	}#
+	return(returner + rnorm(1,0,sd=v))#
+}#
+jitter_sd = .1#
+data = c()#
+for(i in 1:100){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}
+dim(data)
+names(data = c("X","Y"))
+plot(data[,1],data[,2])
+sample_x1 = function(v){#
+	returner = NA#
+	a = runif(1,0,1)#
+	if(a < .5){#
+		returner = c(0,0)#
+	}#
+	if(a >= .5 & a < .65){#
+		returner = c(0,1)#
+	}#
+	if(a >= .65 & a < .75){#
+		returner = c(1,0)#
+	}#
+	if(a >= .75 & a < .8){#
+		returner = c(1,1)#
+	}#
+	if(a >= .8){#
+		returner = c(2,0)#
+	}#
+	return(returner + c(rnorm(1,0,sd=v), rnorm(1,0,sd=v)))#
+}#
+jitter_sd = .1#
+data = c()#
+for(i in 1:100){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}#
+#
+plot(data[,1],data[,2])
+jitter_sd = .1#
+data = c()#
+for(i in 1:1000){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}#
+#
+plot(data[,1],data[,2])
+sample_x1 = function(v){#
+	returner = NA#
+	a = runif(1,0,1)#
+	if(a < .5){#
+		returner = c(0,0)#
+	}#
+	if(a >= .5 & a < .65){#
+		returner = c(0,1)#
+	}#
+	if(a >= .65 & a < .75){#
+		returner = c(1,0)#
+	}#
+	if(a >= .75 & a < .8){#
+		returner = c(1,1)#
+	}#
+	if(a >= .8){#
+		returner = c(2,0)#
+	}#
+	return(returner + c(rnorm(1,0,sd=v), rnorm(1,0,sd=v)))#
+}#
+jitter_sd = .3#
+data = c()#
+for(i in 1:1000){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}#
+#
+plot(data[,1],data[,2])
+prob_fun <- function(n){#
+	x = exp(-n*(n-1)/(2*365))#
+	return(1 - x)#
+}#
+N = 12#
+#
+if(N<40){#
+	vect = 1:60#
+}else{#
+	vect = 1:(N+20)#
+}#
+#
+plot(vect, prob_fun(vect), main = "Birthday Probabilities", xlab = "Number of People", ylab = "Probability of a pair")#
+abline(v = N, col = "RED", lty = 2)#
+abline(prob_fun(N), 0, col = "RED", lty = 2)#
+text(N, prob_fun(N-3), paste("N=", N, "P(N)=", round(prob_fun(N), 3)), pos = 4, offset = 0.2)
+prob_fun <- function(n){#
+	x = exp(-n*(n-1)/(2*365))#
+	return(1 - x)#
+}#
+N = 40#
+#
+if(N<40){#
+	vect = 1:60#
+}else{#
+	vect = 1:(N+20)#
+}#
+#
+plot(vect, prob_fun(vect), main = "Birthday Probabilities", xlab = "Number of People", ylab = "Probability of a pair")#
+abline(v = N, col = "RED", lty = 2)#
+abline(prob_fun(N), 0, col = "RED", lty = 2)#
+text(N, prob_fun(N-3), paste("N=", N, "P(N)=", round(prob_fun(N), 3)), pos = 4, offset = 0.2)
+sample_x1 = function(v){#
+	returner = NA#
+	a = runif(1,0,1)#
+	if(a < .5){#
+		returner = c(0,0)#
+	}#
+	if(a >= .5 & a < .65){#
+		returner = c(0,1)#
+	}#
+	if(a >= .65 & a < .75){#
+		returner = c(1,0)#
+	}#
+	if(a >= .75 & a < .8){#
+		returner = c(1,1)#
+	}#
+	if(a >= .8){#
+		returner = c(2,0)#
+	}#
+	return(returner + c(rnorm(1,0,sd=v), rnorm(1,0,sd=v)))#
+}#
+jitter_sd = .3#
+data = c()#
+for(i in 1:100){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}#
+#
+plot(data[,1],data[,2])
+sample_x1 = function(v){#
+	returner = NA#
+	a = runif(1,0,1)#
+	if(a < .5){#
+		returner = c(0,0)#
+	}#
+	if(a >= .5 & a < .65){#
+		returner = c(0,1)#
+	}#
+	if(a >= .65 & a < .75){#
+		returner = c(1,0)#
+	}#
+	if(a >= .75 & a < .8){#
+		returner = c(1,1)#
+	}#
+	if(a >= .8){#
+		returner = c(2,0)#
+	}#
+	return(returner + c(rnorm(1,0,sd=v), rnorm(1,0,sd=v)))#
+}#
+jitter_sd = .2#
+data = c()#
+for(i in 1:1000){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}
+plot(data[,1],data[,2])
+lm = lm(data[,2]~data[,1])
+abline(lm$coeff)
+jitter_sd = .2#
+data = c()#
+for(i in 1:1000){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}#
+#
+plot(data[,1],data[,2], xlab = "x", ylab = 'y')#
+lm = lm(data[,2]~data[,1])#
+abline(lm$coeff, col = "GREY", lwd = 3, lty = 2)
+abline(lm$coeff, col = "RED", lwd = 3, lty = 2)
+prob_fun <- function(n){#
+	x = exp(-n*(n-1)/(2*365))#
+	return(1 - x)#
+}#
+N = 15#
+#
+if(N<40){#
+	vect = 1:60#
+}else{#
+	vect = 1:(N+20)#
+}#
+#
+plot(vect, prob_fun(vect), main = "Birthday Probabilities", xlab = "Number of People", ylab = "Probability of a pair")#
+abline(v = N, col = "RED", lty = 2)#
+abline(prob_fun(N), 0, col = "RED", lty = 2)#
+text(N, prob_fun(N-3), paste("N=", N, "P(N)=", round(prob_fun(N), 3)), pos = 4, offset = 0.2)
+prob_fun <- function(n){#
+	x = exp(-n*(n-1)/(2*365))#
+	return(1 - x)#
+}#
+N = 40#
+#
+if(N<40){#
+	vect = 1:60#
+}else{#
+	vect = 1:(N+20)#
+}#
+#
+plot(vect, prob_fun(vect), main = "Birthday Probabilities", xlab = "Number of People", ylab = "Probability of a pair")#
+abline(v = N, col = "RED", lty = 2)#
+abline(prob_fun(N), 0, col = "RED", lty = 2)#
+text(N, prob_fun(N-3), paste("N=", N, "P(N)=", round(prob_fun(N), 3)), pos = 4, offset = 0.2)
+sample_x1 = function(v){#
+	returner = NA#
+	a = runif(1,0,1)#
+	if(a < .5){#
+		returner = c(0,0)#
+	}#
+	if(a >= .5 & a < .65){#
+		returner = c(0,1)#
+	}#
+	if(a >= .65 & a < .75){#
+		returner = c(1,0)#
+	}#
+	if(a >= .75 & a < .8){#
+		returner = c(1,1)#
+	}#
+	if(a >= .8){#
+		returner = c(2,0)#
+	}#
+	return(returner + c(rnorm(1,0,sd=v), rnorm(1,0,sd=v)))#
+}#
+jitter_sd = 0#
+data = c()#
+for(i in 1:1000){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}#
+#
+plot(data[,1],data[,2], xlab = "x", ylab = 'y')
+jitter_sd = 0.2#
+data = c()#
+for(i in 1:1000){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}#
+#
+plot(data[,1],data[,2], xlab = "x", ylab = 'y')
+jitter_sd = 0.25#
+data = c()#
+for(i in 1:1000){#
+	data = 	rbind(data, sample_x1(jitter_sd))#
+}#
+#
+plot(data[,1],data[,2], xlab = "x", ylab = 'y')
+lm = lm(data[,2]~data[,1])#
+abline(lm$coeff, col = "RED  ", lwd = 3, lty = 2)
+lm$coeff
+92/104 * 50
+data = read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2")
+data = read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2", sep = "\t")
+data = read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2", sep = ",")
+data = read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/testreducer.txt", sep = ",")
+data = read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/testreduced.txt", sep = ",")
+head(data)
+sum(data$V5)
+length(which(data$V5 > 1))
+data = read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/testreduced.txt", sep = ",")
+length(which(data$V5 > 1))
+Make 2D Histogram:#
+#
+#res <- read.table("mini_result.txt",sep=",",header=F)#
+res <- read.table("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/binned-output/full_results.txt",sep=",",header=F)#
+#
+res$V1 = round(as.numeric(gsub("\\(","",as.character(res$V1))),2)#
+res$V4 = round(as.numeric(gsub("\\)","",as.character(res$V4))),2)#
+#
+head(res)#
+#
+x <- apply(res[,1:2],1,mean)#
+y <- apply(res[,3:4],1,mean)#
+z <- res[,5]#
+#
+colvec <- terrain.colors(max(res[,5])+1)#
+mf <- 4#
+px <- 480*mf#
+#
+png("hist2d.png",width=px,height=px)#
+#
+plot(range(x),range(y),type="n",#
+     main="Bivariate Histogram: STA 250 HW2",#
+     xlab="x",ylab="y",#
+     cex.main=mf,cex.lab=mf,cex.axis=mf)#
+for (i in 1:nrow(res)){#
+  polygon(x=c(res[i,1],res[i,2],res[i,2],res[i,1]),#
+          y=c(res[i,3],res[i,3],res[i,4],res[i,4]),#
+          col=colvec[res[i,5]])#
+  if (i%%10000==0){#
+    cat(paste0("Finished row ",i,"\n"))#
+  }#
+}#
+#
+dev.off()
+get.wd()
+getwd()
+setwd("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/summary/")
+data<-read.table('results.txt', header=FALSE,sep="\001")
+head(data)
+names(data) = c("Group", "Mean", "Variance")
+plot(data$Mean, data$Variance)
+dim(data)
+col_fun = colorRampPalette("blue", "green")#
+plot(data$Mean, data$Variance, col = col_fun(1000))
+col_fun = colorRampPalette("blue", "green")
+colorRampPalette("blue", "green")
+colorRampPalette(c("blue", "green"))
+col_fun = colorRampPalette(c("blue", "green"))
+plot(data$Mean, data$Variance, col = col_fun(1000))
+plot(data$Mean, data$Variance, col = col_fun(1000), xlab = "Group Mean", ylab = "Group Variance")
+legend("topleft", c("Group 1", "Group 1000"), col = c(col1,col2))
+legend("topleft", c("Group 1", "Group 1000"), col = c(col1,col2), pch = c(1,1))
+col1 = "blue"#
+col2 = "green"#
+col_fun = colorRampPalette(c(col1,col2))#
+plot(data$Mean, data$Variance, col = col_fun(1000), xlab = "Group Mean", ylab = "Group Variance")#
+legend("topleft", c("Group 1", "Group 1000"), col = c(col1,col2), pch = c(1,1))
+col1 = "blue"#
+col2 = "red"#
+col_fun = colorRampPalette(c(col1,col2))#
+plot(data$Mean, data$Variance, col = col_fun(1000), xlab = "Group Mean", ylab = "Group Variance")#
+legend("topleft", c("Group 1", "Group 1000"), col = c(col1,col2), pch = c(1,1))
+plot(exp(data$Mean), data$Variance, col = col_fun(1000), xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = col_fun(1000), xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = col_fun(1000), pch = ".", xlab = "Group Mean", ylab = "Group Variance")
+col1 = "blue"#
+col2 = "red"#
+col_fun = colorRampPalette(c(col1,col2))#
+plot(data$Mean, data$Variance, col = col_fun(1000), pch = "x", xlab = "Group Mean", ylab = "Group Variance")#
+legend("topleft", c("Group 1", "Group 1000"), col = c(col1,col2), pch = c(1,1))
+plot(smoothScatter(data$Mean, data$Variance))
+plot(smoothScatter(data$Mean, data$Variance, nbin = 200))
+min(data$Mean)
+plot(smoothScatter(data$Mean, data$Variance, nbin = 100))
+plot(smoothScatter(data$Mean, data$Variance, nbin = 3000))
+plot(smoothScatter(data$Mean, data$Variance, nbin = 300))
+smoothScatter(data$Mean, data$Variance, nbin = 300)
+smoothScatter(data$Mean, data$Variance, nbin = 128)
+smoothScatter(data$Mean, data$Variance, nbin = 450)
+smoothScatter(data$Mean, data$Variance, nbin = 300, colramp = colorRampPalette(c(col1,col2)))
+col1 = "white"#
+col2 = "black"#
+col_fun = colorRampPalette(c(col1,col2))#
+plot(data$Mean, data$Variance, col = col_fun(1000), pch = "x", xlab = "Group Mean", ylab = "Group Variance")#
+legend("topleft", c("Group 1", "Group 1000"), col = c(col1,col2), pch = c(1,1))#
+smoothScatter(data$Mean, data$Variance, nbin = 300, colramp = colorRampPalette(c(col1,col2)))
+col1 = "white"#
+col2 = "black"#
+col_fun = colorRampPalette(c(col1,col2))#
+plot(data$Mean, data$Variance, col = col_fun(1000), pch = "x", xlab = "Group Mean", ylab = "Group Variance")#
+legend("topleft", c("Group 1", "Group 1000"), col = c(col1,col2), pch = c(1,1))
+smoothScatter(data$Mean, data$Variance, nbin = 300, colramp = colorRampPalette(c(col1,col2)))
+col1 = "white"#
+col2 = "blue"#
+col_fun = colorRampPalette(c(col1,col2))#
+plot(data$Mean, data$Variance, col = col_fun(1000), pch = "x", xlab = "Group Mean", ylab = "Group Variance")#
+legend("topleft", c("Group 1", "Group 1000"), col = c(col1,col2), pch = c(1,1))#
+smoothScatter(data$Mean, data$Variance, nbin = 300, colramp = colorRampPalette(c(col1,col2)))
+smoothScatter(data$Mean, data$Variance, nbin = 300, colramp = colorRampPalette(c(col1,col2)), #
+	xlab = "Group Mean", ylab = "Group Variance")
+col1 = "blue"#
+col2 = "blue"#
+col_fun = colorRampPalette(c(col1,col2))#
+plot(data$Mean, data$Variance, col = col_fun(1000), pch = "x", xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = "x", xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 13, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 10, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 11, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 9, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 8, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 7, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 6, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 5, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 4, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 14, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF1F", pch = 15, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF2F", pch = 15, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF2F", pch = 16, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF27", pch = 16, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF2A", pch = 16, xlab = "Group Mean", ylab = "Group Variance")
+setwd("/Users/jmwerner1123/Dropbox/GitHub/Invisible/STA250/HW2/Hive/summary/")#
+#
+data<-read.table('results.txt', header=FALSE,sep="\001")#
+names(data) = c("Group", "Mean", "Variance")#
+#
+col1 = "blue"#
+col2 = "blue"#
+col_fun = colorRampPalette(c(col1,col2))#
+plot(data$Mean, data$Variance, col = col_fun(1000), pch = "x", xlab = "Group Mean", ylab = "Group Variance")#
+legend("topleft", c("Group 1", "Group 1000"), col = c(col1,col2), pch = c(1,1))#
+smoothScatter(data$Mean, data$Variance, nbin = 300, colramp = colorRampPalette(c(col1,col2)), #
+	xlab = "Group Mean", ylab = "Group Variance")#
+plot(data$Mean, data$Variance, col = "#0000FF2A", pch = 16, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0000FF2A", pch = 16, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#20A0FF2A", pch = 16, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#00A0FF2A", pch = 16, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0030FF2A", pch = 16, xlab = "Group Mean", ylab = "Group Variance")
+plot(data$Mean, data$Variance, col = "#0030FF4A", pch = 16, xlab = "Group Mean", ylab = "Group Variance")
+try3#
+pdf("hive_graph.pdf")#
+plot(data$Mean, data$Variance, col = "#0030FF4A", pch = 16, xlab = "Group Mean", ylab = "Group Variance")#
+dev.off()
